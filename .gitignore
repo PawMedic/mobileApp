@@ -36,6 +36,5 @@ build/
 *.iml
 kotlin-ide/
 .kotlin/
-# SQLite Database
 *.db
 
