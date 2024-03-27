@@ -1,5 +1,7 @@
 package com.example.chatfiturrrr.adapter
 
+import android.annotation.SuppressLint
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,14 +11,10 @@ import com.example.chatfiturrrr.R
 import com.example.chatfiturrrr.activity.SignInActivity
 import com.example.chatfiturrrr.model.User
 
-class UserAdapter (var list: List<User>) : RecyclerView.Adapter<UserAdapter.ViewHolder>() {
+class UserAdapter (private var list: List<User>, context: Context) : RecyclerView.Adapter<UserAdapter.ViewHolder>() {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
-        var namee: TextView
-        var email: TextView
-        init {
-            namee = view.findViewById(R.id.etName)
-            email = view.findViewById(R.id.etEmail)
-        }
+        val textUsername: TextView = view.findViewById(R.id.textUsername)
+        val textEmail: TextView = view.findViewById(R.id.textEmail)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -29,7 +27,14 @@ class UserAdapter (var list: List<User>) : RecyclerView.Adapter<UserAdapter.View
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.namee.text = list[position].toString()
-        holder.email.text = list[position].toString()
+        val userList = list[position]
+        holder.textUsername.text = userList.username
+        holder.textEmail.text = userList.email
     }
+
+//    @SuppressLint("NotifyDataSetChanged")
+//    fun refreshData(newList: List<User>){
+//        list = newList
+//        notifyDataSetChanged()
+//    }
 }

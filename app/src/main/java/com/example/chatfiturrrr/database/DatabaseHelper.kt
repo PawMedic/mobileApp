@@ -37,16 +37,18 @@ class DatabaseHelper (private val context: Context?) : SQLiteOpenHelper(
         onCreate(db)
     }
 
-    fun insertUser(username: String, email: String, password: String): Long {
+    fun insertUser(user: User): Long {
 
         val values = ContentValues().apply {
-            put(COLUMN_USERNAME, username)
-            put(COLUMN_EMAIL, email)
-            put(COLUMN_PASSWORD, password)
+            put(COLUMN_USERNAME, user.username)
+            put(COLUMN_EMAIL, user.email)
+            put(COLUMN_PASSWORD, user.password)
 
         }
         val db = writableDatabase
-        return db.insert(TABLE_NAME, null, values)
+        val newRowId = db.insert(TABLE_NAME, null, values)
+        db.close()
+        return newRowId
     }
 
     fun readUser(username: String, email: String, password: String): Boolean{
@@ -57,24 +59,26 @@ class DatabaseHelper (private val context: Context?) : SQLiteOpenHelper(
 
         val userExists = cursor.count > 0
         cursor.close()
+        db.close()
         return userExists
     }
     @SuppressLint("Range")
-    fun getAllUsers(): MutableList<User> {
+    fun getAllUsers(currentUsername: String): List<User> {
         val userList = mutableListOf<User>()
         val db = readableDatabase
-        val query = "SELECT * FROM $TABLE_NAME"
-        val cursor = db.rawQuery(query, null)
-        cursor.use {
-            while (it.moveToNext()) {
-                val id = it.getInt(it.getColumnIndex(COLUMN_ID))
-                val username = it.getString(it.getColumnIndex(COLUMN_USERNAME))
-                val email = it.getString(it.getColumnIndex(COLUMN_EMAIL))
-                val password = it.getString(it.getColumnIndex(COLUMN_PASSWORD))
+        val query = "SELECT * FROM $TABLE_NAME WHERE $COLUMN_USERNAME != ?"
+        val cursor = db.rawQuery(query, arrayOf(currentUsername))
+            while (cursor.moveToNext()) {
+                val id = cursor.getInt(cursor.getColumnIndex(COLUMN_ID))
+                val username = cursor.getString(cursor.getColumnIndex(COLUMN_USERNAME))
+                val email = cursor.getString(cursor.getColumnIndex(COLUMN_EMAIL))
+                val password = cursor.getString(cursor.getColumnIndex(COLUMN_PASSWORD))
+
                 val user = User(id, username, email, password)
                 userList.add(user)
             }
-        }
+        cursor.close()
+        db.close()
         return userList
     }
 }

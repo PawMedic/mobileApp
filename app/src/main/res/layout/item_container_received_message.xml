@@ -11,12 +11,12 @@
         android:layout_height="25dp"
         android:background="@drawable/background_image"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="@id/textMessage"
+        app:layout_constraintBottom_toBottomOf="@id/textMessageReceive"
         app:layout_constraintStart_toStartOf="parent"
         app:riv_oval="true"/>
 
     <TextView
-        android:id="@+id/textMessage"
+        android:id="@+id/textMessageReceive"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
@@ -35,7 +35,7 @@
         android:layout_marginTop="4dp"
         android:textColor="@color/secondary_text"
         android:textSize="10sp"
-        app:layout_constraintStart_toStartOf="@id/textMessage"
-        app:layout_constraintTop_toBottomOf="@id/textMessage"/>
+        app:layout_constraintStart_toStartOf="@id/textMessageReceive"
+        app:layout_constraintTop_toBottomOf="@id/textMessageReceive"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
