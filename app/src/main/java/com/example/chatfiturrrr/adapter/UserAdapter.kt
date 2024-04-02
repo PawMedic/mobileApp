@@ -2,16 +2,18 @@ package com.example.chatfiturrrr.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.chatfiturrrr.R
+import com.example.chatfiturrrr.activity.ChatActivity
 import com.example.chatfiturrrr.activity.SignInActivity
 import com.example.chatfiturrrr.model.User
 
-class UserAdapter (private var list: List<User>, context: Context) : RecyclerView.Adapter<UserAdapter.ViewHolder>() {
+class UserAdapter (private var list: List<User>, val context: Context) : RecyclerView.Adapter<UserAdapter.ViewHolder>() {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
         val textUsername: TextView = view.findViewById(R.id.textUsername)
         val textEmail: TextView = view.findViewById(R.id.textEmail)
@@ -27,9 +29,16 @@ class UserAdapter (private var list: List<User>, context: Context) : RecyclerVie
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val userList = list[position]
-        holder.textUsername.text = userList.username
-        holder.textEmail.text = userList.email
+        val currentUser = list[position]
+        holder.textUsername.text = currentUser.username
+        holder.textEmail.text = currentUser.email
+
+        holder.itemView.setOnClickListener{
+            val intent = Intent(context, ChatActivity::class.java)
+            intent.putExtra("username",currentUser.username)
+            intent.putExtra("user_id",currentUser.id.toString())
+            context.startActivity(intent)
+        }
     }
 
 //    @SuppressLint("NotifyDataSetChanged")

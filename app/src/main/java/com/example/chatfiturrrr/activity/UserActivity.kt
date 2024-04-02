@@ -48,7 +48,6 @@ class UserActivity : AppCompatActivity(  ) {
         Log.d("SharedPreferences", "Nilai currentUserUsername: $currentUsername")
 
 
-
         binding.imageBack.setOnClickListener {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
