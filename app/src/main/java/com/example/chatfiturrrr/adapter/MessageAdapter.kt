@@ -7,8 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.chatfiturrrr.R
-import com.example.chatfiturrrr.database.MessageDatabaseHelper
-//import com.example.chatfiturrrr.database.MessageDatabaseHelper
+
 import com.example.chatfiturrrr.messagesss.Message
 
 class MessageAdapter(val context: Context, val messageList: ArrayList<Message>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
