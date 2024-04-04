@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.chatfiturrrr"
+    namespace = "com.chat"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.chatfiturrrr"
+        applicationId = "com.chat"
         minSdk = 31
         targetSdk = 34
         versionCode = 1

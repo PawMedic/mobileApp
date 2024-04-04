@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ChatFiturrrr</string>
+    <string name="app_name">Chat</string>
     <string name="welcome_back_to_pawmedic">Welcome Back To PawMedic</string>
     <string name="login_to_continue">Login to continue</string>
     <string name="Email">Email</string>

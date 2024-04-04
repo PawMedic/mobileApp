@@ -1,6 +1,5 @@
-package com.example.chatfiturrrr.adapter
+package com.chat.chat.adapter
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
@@ -8,10 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.chatfiturrrr.R
-import com.example.chatfiturrrr.activity.ChatActivity
-import com.example.chatfiturrrr.activity.SignInActivity
-import com.example.chatfiturrrr.model.User
+import com.chat.R
+import com.chat.chat.activity.ChatActivity
+import com.chat.data.User
 
 class UserAdapter (private var list: List<User>, val context: Context) : RecyclerView.Adapter<UserAdapter.ViewHolder>() {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view){

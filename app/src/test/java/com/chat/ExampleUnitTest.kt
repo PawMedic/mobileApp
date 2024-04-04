@@ -1,4 +1,4 @@
-package com.example.chatfiturrrr
+package com.chat
 
 import org.junit.Test
 

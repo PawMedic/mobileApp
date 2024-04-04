@@ -1,12 +1,12 @@
-package com.example.chatfiturrrr.activity
+package com.chat.chat.activity
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.chatfiturrrr.database.DatabaseHelper
-import com.example.chatfiturrrr.databinding.ActivitySignUpBinding
-import com.example.chatfiturrrr.model.User
+import com.chat.chat.database.DatabaseHelper
+import com.chat.databinding.ActivitySignUpBinding
+import com.chat.data.User
 
 class SignUpActivity : AppCompatActivity() {
     private  lateinit var  binding: ActivitySignUpBinding

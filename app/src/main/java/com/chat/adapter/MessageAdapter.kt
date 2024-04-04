@@ -1,4 +1,4 @@
-package com.example.chatfiturrrr.adapter
+package com.chat.chat.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,9 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.chatfiturrrr.R
-
-import com.example.chatfiturrrr.messagesss.Message
+import com.chat.R
+import com.chat.chat.messagesss.Message
 
 class MessageAdapter(val context: Context, val messageList: ArrayList<Message>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 

@@ -1,11 +1,10 @@
-package com.example.chatfiturrrr.activity
+package com.chat.chat.activity
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.chatfiturrrr.R
-import com.example.chatfiturrrr.databinding.ActivityMainBinding
+import com.chat.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     private  lateinit var  binding: ActivityMainBinding
 //    private lateinit var  databaseHelper: DatabaseHelper

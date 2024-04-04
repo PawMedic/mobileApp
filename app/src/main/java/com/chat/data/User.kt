@@ -1,4 +1,4 @@
-package com.example.chatfiturrrr.model
+package com.chat.data
 
 import android.os.Parcel
 import android.os.Parcelable

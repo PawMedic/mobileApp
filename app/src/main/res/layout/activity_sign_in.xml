@@ -8,7 +8,7 @@
     android:overScrollMode="never"
     android:padding="24dp"
     android:scrollbars="none"
-    tools:context=".activity.SignInActivity">
+    tools:context="com.chat.chat.activity.SignInActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -1,4 +1,4 @@
-package com.example.chatfiturrrr.messagesss
+package com.chat.chat.messagesss
 
 class Message {
     var message: String? = null

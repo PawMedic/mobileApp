@@ -1,7 +1,8 @@
-package com.example.chatfiturrrr.activity
+package com.chat.chat.activity
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
@@ -10,11 +11,11 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.chatfiturrrr.R
-import com.example.chatfiturrrr.adapter.MessageAdapter
-import com.example.chatfiturrrr.database.MessageDatabaseHelper
-import com.example.chatfiturrrr.databinding.ActivityChatBinding
-import com.example.chatfiturrrr.messagesss.Message
+import com.chat.R
+import com.chat.chat.adapter.MessageAdapter
+import com.chat.chat.database.MessageDatabaseHelper
+import com.chat.chat.messagesss.Message
+import com.chat.databinding.ActivityChatBinding
 
 
 class ChatActivity : AppCompatActivity() {
@@ -31,7 +32,7 @@ class ChatActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val username = intent.getStringExtra("username")
-        val user_id = intent.getStringExtra("user_id")
+//        val user_id = intent.getStringExtra("user_id")
 
         val textName = findViewById<TextView>(R.id.textName)
         textName.text = username
@@ -57,6 +58,10 @@ class ChatActivity : AppCompatActivity() {
             if (message.isNotEmpty()) {
                 sendMessageToDatabase(message)
             }
+        }
+        binding.imageBack.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
     }
     @SuppressLint("NotifyDataSetChanged")

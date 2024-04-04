@@ -1,25 +1,15 @@
-package com.example.chatfiturrrr.activity
+package com.chat.chat.activity
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.chatfiturrrr.R
-import com.example.chatfiturrrr.adapter.UserAdapter
-import com.example.chatfiturrrr.database.DatabaseHelper
-import com.example.chatfiturrrr.databinding.ActivityMainBinding
-import com.example.chatfiturrrr.databinding.ActivityUserBinding
-import com.example.chatfiturrrr.model.User
-
+import com.chat.chat.adapter.UserAdapter
+import com.chat.chat.database.DatabaseHelper
+import com.chat.databinding.ActivityUserBinding
 class UserActivity : AppCompatActivity(  ) {
     private lateinit var  binding: ActivityUserBinding
     private lateinit var adapter: UserAdapter

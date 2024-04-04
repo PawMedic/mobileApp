@@ -1,11 +1,11 @@
-package com.example.chatfiturrrr.database
+package com.chat.chat.database
 
 import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import com.example.chatfiturrrr.model.User
+import com.chat.data.User
 
 class DatabaseHelper (private val context: Context?) : SQLiteOpenHelper(
     context, DATABASE_NAME, null, DATABASE_VERSION
